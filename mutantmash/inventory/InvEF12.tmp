@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://diy8nccpcno8u"]
+
+[ext_resource type="Texture2D" uid="uid://cu2du3sorin6u" path="res://inventory/backgroundTemp.png" id="1_d6bpy"]
+[ext_resource type="Script" path="res://inventory/Inventory.gd" id="1_dnguv"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dnguv")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 338.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.4, 3.48)
+texture = ExtResource("1_d6bpy")
+stretch_mode = 1
+
+[node name="TooltipPanel" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+scale = Vector2(0.4, 0.4)
+
+[node name="GridParent" type="Node2D" parent="GridContainer"]
+position = Vector2(72, -14)
+
+[node name="PlacedPartsContainer" type="Node2D" parent="GridContainer"]
+position = Vector2(-20, -20)

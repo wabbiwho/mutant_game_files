@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://e21kt37dfkn2"]
+
+[ext_resource type="Script" path="res://parts/eyeball_part.gd" id="1_rxjnu"]
+[ext_resource type="Texture2D" uid="uid://dhkr0t5en1g1k" path="res://parts/16biteye.png" id="2_ux5xe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_134mw"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_n32yo"]
+resource_name = "eyeball1"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhkpc"]
+_data = {
+"eyeball1": SubResource("Animation_n32yo")
+}
+
+[node name="Eyeball" type="Node2D"]
+script = ExtResource("1_rxjnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ux5xe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_134mw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xhkpc")
+}

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckb1hbtba3u74"]
+
+[ext_resource type="Texture2D" uid="uid://dg43jh4kgh1n7" path="res://player/base_torso.png" id="1_d5jqp"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_kmu5h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sudv3"]
+radius = 23.0
+height = 64.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kmu5h")
+metadata/_edit_vertical_guides_ = [-176.0]
+
+[node name="TorsoSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_d5jqp")
+
+[node name="PartsContainer" type="Node2D" parent="."]
+
+[node name="HeadAnchor" type="Node2D" parent="PartsContainer"]
+position = Vector2(0, -31)
+
+[node name="LeftArmAnchor" type="Node2D" parent="PartsContainer"]
+position = Vector2(-20, -18)
+
+[node name="RightArmAnchor" type="Node2D" parent="PartsContainer"]
+position = Vector2(20, -18)
+
+[node name="LeftLegAnchor" type="Node2D" parent="PartsContainer"]
+position = Vector2(-13, 30)
+
+[node name="RightLegAnchor" type="Node2D" parent="PartsContainer"]
+position = Vector2(13, 30)
+
+[node name="BellyAnchor" type="Node2D" parent="PartsContainer"]
+position = Vector2(0, 13)
+
+[node name="TorsoShape" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_sudv3")
+
+[node name="Camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmrmsj3eedvy2"]
+
+[ext_resource type="Script" path="res://powers/PartData.gd" id="1_oc3ki"]
+[ext_resource type="Texture2D" uid="uid://2g40dtbhahem" path="res://parts/Tenticle1.png" id="2_1wsmj"]
+[ext_resource type="Resource" uid="uid://cpytjd6ojn7y0" path="res://powers/tentacle_whip.tres" id="2_x6ggt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p20h7"]
+radius = 4.0
+
+[node name="TentaclePart" type="Node2D"]
+script = ExtResource("1_oc3ki")
+powers = [ExtResource("2_x6ggt")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14.0291, 0.336358)
+rotation = -1.41839
+texture = ExtResource("2_1wsmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15.0291, 0.336358)
+rotation = -1.55103
+shape = SubResource("CapsuleShape2D_p20h7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

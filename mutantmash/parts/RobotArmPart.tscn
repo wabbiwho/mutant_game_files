@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ulxey30gwq2w"]
+
+[ext_resource type="Script" path="res://parts/robotarm_part.gd" id="1_1lxe1"]
+[ext_resource type="Texture2D" uid="uid://inkgda46sqrg" path="res://parts/robotarm1.png" id="2_2gut1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o1t4"]
+size = Vector2(10, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr88u"]
+size = Vector2(24.5, 9)
+
+[node name="RobotArm" type="Node2D"]
+script = ExtResource("1_1lxe1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, 7)
+texture = ExtResource("2_2gut1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_3o1t4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(12, 16)
+shape = SubResource("RectangleShape2D_qr88u")

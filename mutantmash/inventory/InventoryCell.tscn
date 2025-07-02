@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv57jxqg0ci0"]
+
+[ext_resource type="Script" path="res://inventory/InventoryCell.gd" id="1_2c63n"]
+[ext_resource type="Texture2D" uid="uid://du4rb8f71u4ng" path="res://inventory/Cell1.png" id="1_hfjs2"]
+
+[node name="InventoryCell" type="TextureRect"]
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_hfjs2")
+script = ExtResource("1_2c63n")
+
+[node name="PartLayer" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="Highlight" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="GreenHighlight" type="ColorRect" parent="."]
+modulate = Color(0.207843, 0.960784, 0.227451, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2

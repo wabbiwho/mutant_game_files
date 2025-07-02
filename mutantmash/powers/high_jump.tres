@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Power" load_steps=2 format=3 uid="uid://bn0hpcv8glv4b"]
+
+[ext_resource type="Script" path="res://powers/Power.gd" id="1_cfux5"]
+
+[resource]
+script = ExtResource("1_cfux5")
+id = "high_jump"
+name = "High Jump"
+description = "Jump good, samurai."
+type = "passive"
+input_combo = ""
+cooldown = 0.0
+cast_time = 0.0
+resource_cost = {}
+tags = [&"mobility", &"jump"]

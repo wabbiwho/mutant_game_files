@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd4ikpn5oxvqd"]
+
+[ext_resource type="Texture2D" uid="uid://b8hgdglw7rlsn" path="res://parts/AlienBorg_head_part.png" id="2_pf3ke"]
+
+[sub_resource type="GDScript" id="GDScript_rqitv"]
+script/source = "extends CharacterBody2D
+
+@export var speed := 120
+@export var jump_velocity := -300
+@export var gravity := 800
+
+func _physics_process(delta):
+	# Apply gravity
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Horizontal input
+	var direction = Input.get_action_strength(\"ui_right\") - Input.get_action_strength(\"ui_left\")
+	velocity.x = direction * speed
+
+	# Jumping
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = jump_velocity
+
+	# Move the character
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2keq"]
+size = Vector2(89, 103)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = SubResource("GDScript_rqitv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.120428
+texture = ExtResource("2_pf3ke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -1.5)
+shape = SubResource("RectangleShape2D_x2keq")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dywjplo061fmj"]
+
+[ext_resource type="Script" path="res://PaletteButton.gd" id="1_n7tpb"]
+[ext_resource type="Texture2D" uid="uid://dfvq5kkdajx6e" path="res://inventory/partsBG.png" id="2_capjv"]
+
+[node name="PaletteButton" type="TextureButton"]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -512.0
+offset_bottom = -260.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_n7tpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(32, 32)
+texture = ExtResource("2_capjv")
+
+[node name="CostLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.8)
+layout_mode = 0
+offset_top = 41.0
+offset_right = 64.0
+offset_bottom = 64.0
+horizontal_alignment = 2
+vertical_alignment = 2

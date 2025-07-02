@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Power" load_steps=2 format=3 uid="uid://cpytjd6ojn7y0"]
+
+[ext_resource type="Script" path="res://powers/Power.gd" id="1_e1346"]
+
+[resource]
+script = ExtResource("1_e1346")
+id = "tentacle_whip"
+name = "Tentacle Whip"
+description = "whip enemies"
+type = "active"
+input_combo = "Shift+LMB"
+cooldown = 1.5
+cast_time = 0.0
+resource_cost = {}
+tags = [&"melee", &"knockback", &"tentacle"]

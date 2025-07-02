@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://217l7qeytc3i"]
+
+[ext_resource type="Script" path="res://powers/PartData.gd" id="1_tarlt"]
+[ext_resource type="Texture2D" uid="uid://55ca27xn5j1k" path="res://parts/leggy_part.png" id="1_xulkr"]
+[ext_resource type="Resource" uid="uid://bn0hpcv8glv4b" path="res://powers/high_jump.tres" id="2_u3k7v"]
+[ext_resource type="Resource" uid="uid://dakqjl0evvvgt" path="res://powers/double_jump.tres" id="3_dm6gp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4fmv"]
+size = Vector2(11, 52)
+
+[node name="LeggyPart" type="Node2D"]
+script = ExtResource("1_tarlt")
+powers = [ExtResource("2_u3k7v"), ExtResource("3_dm6gp")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 18)
+texture = ExtResource("1_xulkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 16)
+shape = SubResource("RectangleShape2D_t4fmv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
